@@ -1,0 +1,23 @@
+label debut
+	set dir 0
+label comptDir
+	set comptDir 0
+label detect
+	jumpEqual comptDir 4 comptDir
+	detect res dir 1
+	add comptDir 1
+	jumpEqual res 1 creuse
+	jumpEqual comptDir 4 random 
+label nextdir
+	add dir 1
+	jumpEqual dir 4 debut
+	goto detect
+label random
+	random dir 4
+	sub dir 1
+label avancer
+	advance dir
+	goto detect
+label creuse
+	extract
+	goto detect

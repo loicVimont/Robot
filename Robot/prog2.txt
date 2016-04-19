@@ -1,0 +1,8 @@
+label debut
+	set dir 0
+label random
+	random dir 4
+	sub dir 1
+label avancer
+	advance dir
+	goto debut
